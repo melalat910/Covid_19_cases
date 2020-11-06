@@ -2,7 +2,7 @@ class CLI
 
  def start
   puts "Welcome!"
-  API.fetch_cases
+  API.fetch_countries
  end
 
 end
