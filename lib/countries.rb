@@ -1,3 +1,3 @@
-class Cases
+class Countries
 
 end
