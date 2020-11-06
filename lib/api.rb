@@ -1,6 +1,6 @@
 class API
 
- def self.fetch_cases
+ def self.fetch_countries
    url = "https://api.covid19api.com/summary"
    binding.pry
    uri = URI(url)
