@@ -26,8 +26,8 @@ class CLI
    #access all the countries
    #binding.pry
    #print each one out
-   Countries.all.each do |countries|
-   puts countries.slug
+   Countries.all.each.with_index(1) do |countries, index|
+   puts "#{index}. #{countries.slug}"
 
   end
  end
