@@ -7,16 +7,6 @@ class API
    hash = JSON.parse(response)
    array_of_countries = hash["Countries"]
 
- #CountryCode
- #Slug
- #NewConfirmed
- #TotalConfirmed
- #NewDeaths
- #TotalDeaths
- #NewRecovered
- #TotalRecovered
- #Date
- #:country_code, :slug, :new_confirmed, :total_confirmed, :new_deaths, :total_deaths, :new_recovered, :total_recovered, :date
 
  array_of_countries.each do |countries_hash|
  countries = Countries.new

@@ -15,10 +15,17 @@ class CLI
    #if user says yes
    if user_input =="yes" || user_input == "y"
    puts "Choose a country to find info on new and total confirmed deaths and recoveries of Covid-19."
-    #display the list
+
    display_list_of_countries
    ask_user_to_choose_countries
-   end
+
+   sleep(3)
+   puts "\n"
+
+   countries
+ else
+  puts "Bye!"
+ end
 
  end
 
@@ -46,7 +53,7 @@ end
   display_countries_details(countries_instance)
   end
   def display_countries_details(countries)
-
+    sleep(3)
     puts "\n"
     puts "Country Code: " + countries.country_code
     puts "Country name: " + countries.slug
