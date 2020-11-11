@@ -19,9 +19,6 @@ class API
  countries.new_recovered = countries_hash["NewRecovered"]
  countries.total_recovered = countries_hash["TotalRecovered"]
  countries.date = countries_hash["Date"]
-
-
-
   end
  end
 end

@@ -12,7 +12,6 @@ class CLI
    puts "Type 'yes' to continue, or press any other key to exit."
 
    user_input = gets.strip.downcase
-   #if user says yes
    if user_input =="yes" || user_input == "y"
    puts "Choose a country to find info on new and total confirmed deaths and recoveries of Covid-19."
 
@@ -24,23 +23,19 @@ class CLI
 
    countries
  else
-  puts "Bye!"
+  puts "Wear Your Mask!"
  end
 
  end
 
   def display_list_of_countries
    puts "All the countries."
-   #access all the countries
-   #binding.pry
-   #print each one out
    Countries.all.each.with_index(1) do |countries, index|
    puts "#{index}. #{countries.slug}"
   end
 end
 
   def ask_user_to_choose_countries
-  #ask user for choice
    puts "Choose the number of the country you would like information on."
    index = gets.strip.to_i - 1
 
@@ -55,7 +50,7 @@ end
   def display_countries_details(countries)
     sleep(3)
     puts "\n"
-    puts "Country Code: " + countries.country_code
+    puts "Country Code: " + countries.country_code.to_s
     puts "Country name: " + countries.slug
     puts "New Confirmed Cases: " + countries.new_confirmed.to_s
     puts "Total Confirmed Cases: " + countries.total_confirmed.to_s
