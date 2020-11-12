@@ -2,8 +2,33 @@ class CLI
 
  def start
   puts "Welcome!"
+  API.fetch_global
   API.fetch_countries
+  self.global
   self.countries
+ end
+
+ def global
+   puts "Would you like to see the global impact of Covid-19?"
+   puts "Type 'yes' if you would like to continue."
+   user_input = gets.strip.downcase
+   if user_input =="yes" || user_input == "y"
+  puts "This information will tell you about the global ipact of Covid-19."
+
+  display_global_details
+  sleep(3)
+
+ end
+
+ def display_global_details(global)
+   sleep(3)
+   puts "\n"
+   puts "New Confirmed Cases: " + global.new_confirmed.to_s
+   puts "Total Confirmed Cases: " + global.total_confirmed.to_s
+   puts "New Deaths: " + global.new_deaths.to_s
+   puts "Total Deaths: " + global.total_deaths.to_s
+   puts "New Recoveries: " + global.new_recovered.to_s
+   puts "Total Recoveries: " + global.total_recovered.to_s
  end
 
  def countries
@@ -51,7 +76,7 @@ end
     sleep(3)
     puts "\n"
     puts "Country Code: " + countries.country_code.to_s
-    puts "Country name: " + countries.slug
+    puts "Country Name: " + countries.slug
     puts "New Confirmed Cases: " + countries.new_confirmed.to_s
     puts "Total Confirmed Cases: " + countries.total_confirmed.to_s
     puts "New Deaths: " + countries.new_deaths.to_s
@@ -61,4 +86,5 @@ end
     puts "Date: " + countries.date
 
   end
+ end
  end
